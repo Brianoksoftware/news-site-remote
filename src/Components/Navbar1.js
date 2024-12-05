@@ -5,8 +5,8 @@ function NavBar1() {
 		<div>
 			<nav className="navbar navbar-dark bg-dark">
 				<div className="container-fluid">
-					<a className="navbar-brand " href="/">
-						News Geek
+					<a className="navbar-brand"  href="/">
+						Quick Headlines
 					</a>
 				</div>
 			</nav>
