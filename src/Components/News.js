@@ -57,12 +57,12 @@ function News(props) {
       loader={<h4 className="text-center">Loading...</h4>}
       endMessage={
         <p style={{ textAlign: "center" }}>
-          <b>Yay! You have seen it all</b>
+          <b>END...</b>
         </p>
       }
     >
       <div className="container my-4">
-        <h2 className="text-center mb-4">Latest BBC News</h2>
+        <h2 className="text-center mb-4">Latest from BBC News</h2>
         <div className="row">
           {articles.map((element) => (
             <div className="col-md-4 mb-4" key={element.url}>

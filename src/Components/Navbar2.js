@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 function NavBar2() {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg 
+
+
+
+			{/*<nav className="navbar navbar-expand-lg 
 				bg-body-tertiary">
 				<div className="container-fluid ">
 					<button
@@ -20,10 +23,14 @@ function NavBar2() {
 					>
 						<span className="navbar-toggler-icon"></span>
 					</button>
+
+
 					<div className="collapse navbar-collapse"
 						id="navbarNav">
 						<ul className="navbar-nav">
-							<li className="nav-item">
+
+							 <li className="nav-item">
+
 								<Link className="nav-link active"
 									aria-current="page" to={`/`}>
 									Home
@@ -57,12 +64,19 @@ function NavBar2() {
 							<li className="nav-item">
 								<Link className="nav-link" to={`/Science`}>
 									Science
+
 								</Link>
-							</li>
-						</ul>
+								
+							</li> 
+						</ul> 
 					</div>
+
 				</div>
-			</nav>
+			</nav> */}
+
+
+
+
 		</div>
 	);
 }
