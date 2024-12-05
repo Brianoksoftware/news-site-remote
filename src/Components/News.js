@@ -1,55 +1,49 @@
 import React, { useState, useEffect, useCallback } from "react";
 import NewsItem from "./NewsItem";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Image from "./Images/News1.png";
+import Image from "./Images/News1.png"; // Placeholder image for articles without an image
+import '../News.css'; // Custom CSS for styling
 
 function News(props) {
-  let category = props.category;
-  let [articles, setArticles] = useState([]);
-  let [totalResults, setTotalResults] = useState(0);
-  let [page, setPage] = useState(1);
-
-  // Fetch initial news
-  let resultNews = useCallback(async () => {
+  const [articles, setArticles] = useState([]);
+  const [totalResults, setTotalResults] = useState(0);
+  const [page, setPage] = useState(1);
+  
+  const API_KEY = '3086b425665d4ad1aa1c562cb1829bd3'; // Your provided API key
+  
+  const fetchNews = useCallback(async () => {
     try {
-      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&page=${page}&apiKey=ecfaf9eaaa8d40a5b5d769210f5ee616`;
-      console.log(`Fetching data from: ${url}`);
-
-      let data = await fetch(url);
-      if (!data.ok) {
-        throw new Error(`HTTP error! status: ${data.status}`);
+      const url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&page=${page}&apiKey=${API_KEY}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-
-      let parsedData = await data.json();
-      console.log("Fetched initial data:", parsedData);
-
+      
+      const parsedData = await response.json();
       setArticles(parsedData.articles);
       setTotalResults(parsedData.totalResults);
     } catch (error) {
       console.error("Error fetching initial news data:", error);
     }
-  }, [category, page]);
+  }, [page, API_KEY]); // Dependencies array includes API_KEY
 
   useEffect(() => {
-    resultNews();
-  }, [resultNews]);
+    fetchNews();
+  }, [fetchNews]);
 
-  // Fetch additional data for infinite scroll
-  let fetchData = async () => {
+  const fetchData = async () => {
     try {
-      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&page=${page + 1}&apiKey=ecfaf9eaaa8d40a5b5d769210f5ee616`;
-      console.log(`Fetching data from: ${url}`);
+      const nextPage = page + 1;
+      const url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&page=${nextPage}&apiKey=${API_KEY}`;
+      const response = await fetch(url);
 
-      let data = await fetch(url);
-      if (!data.ok) {
-        throw new Error(`HTTP error! status: ${data.status}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      let parsedData = await data.json();
-      console.log("Fetched paginated data:", parsedData);
-
-      setPage(page + 1);
-      setArticles(articles.concat(parsedData.articles));
+      const parsedData = await response.json();
+      setArticles((prevArticles) => prevArticles.concat(parsedData.articles));
+      setPage(nextPage);
     } catch (error) {
       console.error("Error fetching paginated news data:", error);
     }
@@ -67,12 +61,13 @@ function News(props) {
         </p>
       }
     >
-      <div className="container my-3">
+      <div className="container my-4">
+        <h2 className="text-center mb-4">Latest BBC News</h2>
         <div className="row">
           {articles.map((element) => (
-            <div className="col-md-4" key={element.url}>
+            <div className="col-md-4 mb-4" key={element.url}>
               <NewsItem
-                sourceName={element.source.name}
+                sourceName="BBC News"
                 title={element.title}
                 desc={element.description}
                 imageURL={element.urlToImage ? element.urlToImage : Image}
