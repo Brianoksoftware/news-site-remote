@@ -1,7 +1,7 @@
 // Components/Navbar2.js
 
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 function NavBar2() {
 	return (
