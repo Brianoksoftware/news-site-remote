@@ -1,3 +1,8 @@
+
+/* NOTE: NewsAPI free developer account now only accepts CORS requests from localhost....
+API won't fetch while site hosted on netlify
+so now project codebase using Gnews free instead. */
+
 // App.js
 import React from "react";
 
