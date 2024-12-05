@@ -1,4 +1,4 @@
-// Components/NavBar2.js
+// Components/Navbar2.js
 
 import React from "react";
 import { Link } from "react-router-dom";

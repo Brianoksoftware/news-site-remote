@@ -1,8 +1,13 @@
 // App.js
 import React from "react";
-import NavBar2 from "./Components/NavBar2";
-import NavBar1 from "./Components/NavBar1";
+
+import NavBar2 from './Components/Navbar2';
+
+import NavBar1 from "./Components/Navbar1";
+
 import News from "./Components/News";
+
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -10,7 +15,7 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
-          <NavBar1 />
+         <NavBar1 />
           <NavBar2 />
 
           <div className="container">

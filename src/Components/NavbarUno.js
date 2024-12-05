@@ -1,3 +1,4 @@
+// Components/NavBar1.js
 import React from "react";
 
 function NavBar1() {
