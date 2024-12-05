@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import NewsItem from "./NewsItem";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Image from "./Images/News1.png"; // Placeholder image for articles without an image
+//import Image from "./Images/News1.png"; // Placeholder image for articles without an image
 import '../News.css'; // Custom CSS for styling
 
 function News(props) {
