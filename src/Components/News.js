@@ -62,7 +62,7 @@ function News(props) {
       }
     >
       <div className="container my-4">
-        <h2 className="text-center mb-4">Latest News</h2>
+        <h2 className="text-center mb-4">  TEST Latest News</h2>
         <div className="row">
           {articles.map((element, index) => (
             <div className="col-md-4 mb-4" key={element.url + index}> 
