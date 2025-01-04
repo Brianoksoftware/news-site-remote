@@ -51,6 +51,21 @@ function News(props) {
       loader={<h4 className="text-center">Loading...</h4>}
       endMessage={<p style={{ textAlign: "center" }}><b>END...</b></p>}
     >
+
+      <div>
+        <p>
+            This is a test.
+            This is a test.
+            This is a test.
+            This is a test.
+            This is a test.
+            This is a test.
+            This is a test.
+
+        </p>
+      </div>
+      
+
       <div className="container my-4">
         <h2 className="text-center mb-4">Latest News</h2>
         <div className="row news-grid">
