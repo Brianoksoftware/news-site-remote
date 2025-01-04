@@ -7,35 +7,6 @@ so now project codebase using Gnews free instead. */
 
 
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './Components/Navbar';
-import News from './Components/News';
-
-import './App.css'; // Assuming you have an App.css for styling
-
-function App() {
-  return (
-    <Router>
-      <div className="app-container">
-        <NavBar />
-        <main className="main-content">
-          <Routes>
-            {['/', '/general', '/entertainment', '/technology', '/sports', '/business', '/health', '/science'].map((path, index) => (
-              <Route 
-                key={index}
-                path={path}
-                element={<News category={path === '/' ? 'general' : path.slice(1)} />}
-              />
-            ))}
-          </Routes>
-        </main>
-      </div>
-    </Router>
-  );
-}
-
-export default App;
 
 
 
@@ -52,7 +23,6 @@ export default App;
 
 
 
-{/*
 import React from "react";
 
 import NavBar2 from './Components/Navbar2';
@@ -131,4 +101,4 @@ function App() {
 
 export default App;
 
-  */}
+  
