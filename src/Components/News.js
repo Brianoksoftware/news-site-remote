@@ -52,19 +52,23 @@ function News(props) {
       endMessage={<p style={{ textAlign: "center" }}><b>END...</b></p>}
     >
 
-      <div>
-        <p>
-            This is a test.
-            This is a test.
-            This is a test.
-            This is a test.
-            This is a test.
-            This is a test.
-            This is a test.
 
-        </p>
-      </div>
-      
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+      <img src="../harambexmas.png" alt="Image Description" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
+      <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; text-align: justify;">
+          This is a test.<br>
+          This is a test.<br>
+          This is a test.<br>
+          This is a test.<br>
+          This is a test.<br>
+          This is a test.<br>
+          This is a test.
+      </p>
+    </div>
+
+
 
       <div className="container my-4">
         <h2 className="text-center mb-4">Latest News</h2>
