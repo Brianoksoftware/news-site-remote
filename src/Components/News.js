@@ -57,14 +57,7 @@ function News(props) {
 
       <img src="../harambexmas.png" alt="Image Description" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
 
-      <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; text-align: justify;">
-          This is a test.
-          This is a test.
-          This is a test.
-          This is a test.
-          This is a test.
-          This is a test.
-          This is a test.
+     <!-- <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; text-align: justify;">
       </p>
     </div>
 
